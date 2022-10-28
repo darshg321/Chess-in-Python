@@ -50,21 +50,11 @@ class Button:
 		else:
 			self.top_color = '#80a454'
 
-def drawGrid():
-	blockSize = 20 #Set the size of the grid block
-	for x in range(1280):
-		for y in range(720):
-			rect = pygame.Rect(x*blockSize, y*blockSize,
-							   blockSize, blockSize)
-			pygame.draw.rect(screen, WHITE, rect, 1)
-
 def game_loop():
 	pygame.display.set_caption("Chess")
 	
 	while True:
 		screen.fill((49, 46, 43))
-		
-		drawGrid()
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
