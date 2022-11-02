@@ -1,4 +1,4 @@
-import pygame, sys, random
+import pygame, sys, random, chess
 
 pygame.init()
 pygame.mixer.init()
@@ -9,6 +9,9 @@ screen = pygame.display.set_mode([1280, 720])
 WHITE = (255, 255, 255)
 
 gui_font = pygame.font.SysFont("Futura", 65)
+
+boardimg = pygame.image.load("assets\images\\board.png")
+boardimg = pygame.transform.scale(boardimg, (720, 720)) 
 
 class Button:
 	def __init__(self,text,width,height,pos,elevation):
@@ -55,6 +58,7 @@ def game_loop():
 	
 	while True:
 		screen.fill((49, 46, 43))
+		screen.blit(boardimg, (280, 0))
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
